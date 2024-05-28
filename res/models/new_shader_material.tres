@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bs7ds7npkm4tn"]
+
+[ext_resource type="Shader" path="res://res/shaders/sky.gdshader" id="1_5if85"]
+
+[resource]
+shader = ExtResource("1_5if85")
+shader_parameter/sky_color = Color(0.439216, 0.631373, 0.843137, 1)
+shader_parameter/horizon_color = Color(0.831373, 0.890196, 0.952941, 1)
+shader_parameter/sky_horizon_blend = 0.3

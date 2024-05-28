@@ -1,4 +1,13 @@
-[gd_resource type="PhysicalSkyMaterial" format=3 uid="uid://c615bhxf7gesc"]
+[gd_resource type="PhysicalSkyMaterial" load_steps=3 format=3 uid="uid://c615bhxf7gesc"]
+
+[sub_resource type="Gradient" id="Gradient_e1oc4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rlgla"]
+gradient = SubResource("Gradient_e1oc4")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 0.646724)
 
 [resource]
 turbidity = 25.0
+sun_disk_scale = 2.0
+night_sky = SubResource("GradientTexture2D_rlgla")

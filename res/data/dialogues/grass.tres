@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_r7gk4"]
 script = ExtResource("1_p5uw0")
 author = "System"
-text = "* You touched some grass. Nice."
+text = "* You touched some grass. You are no longer a Fortnite tryhard that doesn't get out of the house."
 responses = Array[ExtResource("1_187r3")]([])
 typewriter_enabled = true
 typewriter_delay = 0.1
@@ -22,7 +22,7 @@ result_dialogue = SubResource("Resource_r7gk4")
 [sub_resource type="Resource" id="Resource_4jmr2"]
 script = ExtResource("1_p5uw0")
 author = "System"
-text = "* You decide not to touch some grass."
+text = "* You decide not to touch some grass as it's such a waste of time."
 responses = Array[ExtResource("1_187r3")]([])
 typewriter_enabled = true
 typewriter_delay = 0.1
