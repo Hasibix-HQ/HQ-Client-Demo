@@ -1,0 +1,4 @@
+[gd_resource type="PhysicalSkyMaterial" format=3 uid="uid://c615bhxf7gesc"]
+
+[resource]
+turbidity = 25.0

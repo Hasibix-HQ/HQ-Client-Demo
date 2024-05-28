@@ -1,0 +1,292 @@
+[gd_scene load_steps=29 format=3 uid="uid://dlw8ijmn1uhjh"]
+
+[ext_resource type="Texture2D" uid="uid://dju2qdr0bgbex" path="res://res/textures/groundpng.png" id="1_k7u6f"]
+[ext_resource type="Theme" uid="uid://cuk4pl4tuej6i" path="res://res/themes/test.tres" id="1_miuo2"]
+[ext_resource type="Script" path="res://addons/dialogue_system/scripts/dialogue_controller.gd" id="2_65ken"]
+[ext_resource type="Resource" uid="uid://dfv707c68s55e" path="res://res/data/dialogues/test.tres" id="2_ihig7"]
+[ext_resource type="PackedScene" uid="uid://bp4j438xbofau" path="res://res/presets/characters/player.tscn" id="4_7g4ja"]
+[ext_resource type="Texture2D" uid="uid://dq8y0vpoy74t" path="res://res/textures/dialogues/hasibot_df_1.png" id="4_86m01"]
+[ext_resource type="Texture2D" uid="uid://bq6lv6oo50d4u" path="res://res/textures/ui/dialogue_box.png" id="4_nxe4m"]
+[ext_resource type="PackedScene" uid="uid://l63qmsvwpkbj" path="res://res/presets/characters/npcs/hasibot.tscn" id="5_b4hyb"]
+[ext_resource type="Script" path="res://addons/dialogue_system/scripts/typewriter_label.gd" id="5_mjj10"]
+[ext_resource type="FontFile" uid="uid://dk2xs1a04xa07" path="res://res/fonts/redensek.ttf" id="6_7oppp"]
+[ext_resource type="PackedScene" uid="uid://c6754plmcytgr" path="res://res/data/dialogues/voice_byte_1.tscn" id="6_kdwj7"]
+[ext_resource type="FontFile" uid="uid://u72em0kcibsi" path="res://res/fonts/SFPixelate.ttf" id="7_fynws"]
+[ext_resource type="PackedScene" uid="uid://diuxmab7f7prb" path="res://res/data/dialogues/voice_byte_2.tscn" id="7_ic00c"]
+[ext_resource type="PackedScene" uid="uid://kekadglrv14y" path="res://res/data/dialogues/voice_byte_3.tscn" id="8_hyya5"]
+[ext_resource type="Texture2D" uid="uid://cr0q2b1pmd466" path="res://res/textures/ui/pause_btn.png" id="11_odhra"]
+[ext_resource type="PackedScene" uid="uid://crwerk1o74yxm" path="res://res/presets/ui/icon_btn.tscn" id="14_bkedm"]
+[ext_resource type="Texture2D" uid="uid://djbuipymojb0o" path="res://res/textures/ui/pers_btn.png" id="14_dl1p0"]
+[ext_resource type="Texture2D" uid="uid://i70q5rhi5h2w" path="res://res/textures/ui/hasibot_btn.png" id="15_ixre3"]
+[ext_resource type="Texture2D" uid="uid://sggwsy3stg0a" path="res://res/textures/ui/ortho_btn.png" id="15_qgh8q"]
+[ext_resource type="Texture2D" uid="uid://cpa53c2bt4sav" path="res://res/textures/ui/player_cam_btn.png" id="15_y16j1"]
+[ext_resource type="Script" path="res://res/scripts/camera_controller.gd" id="16_ai63i"]
+[ext_resource type="Texture2D" uid="uid://w5fexgbb0faw" path="res://res/textures/ui/freecam_btn.png" id="18_wd8y4"]
+[ext_resource type="PackedScene" uid="uid://dncbtjjb2rapd" path="res://res/presets/world_void.tscn" id="23_rk2dx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciof3"]
+bg_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lct1i"]
+
+[sub_resource type="Environment" id="Environment_4vwv4"]
+background_mode = 1
+background_color = Color(1, 1, 0.607843, 1)
+background_energy_multiplier = 1.75
+ambient_light_energy = 1.91
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_g6wa1"]
+vertices = PackedVector3Array(-14.5, 1, 6.5, -14.5, 1, 13.5, -7.25, 1, 13.5, 7.25, 1, 13.5, 14.5, 1, 13.5, 14.5, 1, 6.5, 14.5, 1, -7.5, 14.5, 1, -14.5, 7.25, 1, -14.5, -7.25, 1, -14.5, -14.5, 1, -14.5, -14.5, 1, -7.5, -14.5, 1, -0.5, -14.5, 1, 6.5, -7.25, 1, 13.5, 7.25, 1, 13.5, 14.5, 1, 6.5, 14.5, 1, -0.5, 0, 1, 13.5, 14.5, 1, -0.5, 14.5, 1, -7.5, 7.25, 1, -14.5, -7.25, 1, -14.5, -14.5, 1, -7.5, -14.5, 1, -0.5, 0, 1, -14.5, 0, 1, -14.5, -14.5, 1, -0.5, -7.25, 1, 13.5, 0, 1, 13.5, 14.5, 1, -0.5, 7.25, 1, -14.5)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(11, 10, 9), PackedInt32Array(14, 13, 12), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(21, 20, 19), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(31, 30, 26), PackedInt32Array(26, 30, 29), PackedInt32Array(26, 29, 28), PackedInt32Array(26, 28, 27)]
+geometry_parsed_geometry_type = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xk3g"]
+albedo_texture = ExtResource("1_k7u6f")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.933033
+texture_filter = 2
+
+[node name="test" type="Node3D"]
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_miuo2")
+
+[node name="dialogue_controller" type="Control" parent="ui"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("2_65ken")
+
+[node name="dialogue_box" type="NinePatchRect" parent="ui/dialogue_controller"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_top = -216.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_nxe4m")
+patch_margin_left = 31
+patch_margin_top = 31
+patch_margin_right = 31
+patch_margin_bottom = 31
+
+[node name="dialogue_image" type="TextureRect" parent="ui/dialogue_controller/dialogue_box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -76.0
+offset_right = 172.0
+offset_bottom = 76.0
+grow_vertical = 2
+texture = ExtResource("4_86m01")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="dialogue_author" type="Label" parent="ui/dialogue_controller/dialogue_box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.125
+anchor_right = 0.958
+anchor_bottom = 0.312
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_7oppp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ciof3")
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dialogue_text" type="RichTextLabel" parent="ui/dialogue_controller/dialogue_box" node_paths=PackedStringArray("timer")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.417
+anchor_right = 0.965
+anchor_bottom = 0.896
+offset_left = 0.192001
+offset_top = -0.064003
+offset_right = 0.159973
+offset_bottom = -0.0320129
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("7_fynws")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Text"
+script = ExtResource("5_mjj10")
+timer = NodePath("timer")
+voice_enabled = true
+
+[node name="timer" type="Timer" parent="ui/dialogue_controller/dialogue_box/dialogue_text"]
+wait_time = 0.25
+
+[node name="voice_byte_1" parent="ui/dialogue_controller/dialogue_box/dialogue_text" instance=ExtResource("6_kdwj7")]
+
+[node name="voice_byte_2" parent="ui/dialogue_controller/dialogue_box/dialogue_text" instance=ExtResource("7_ic00c")]
+
+[node name="voice_byte_3" parent="ui/dialogue_controller/dialogue_box/dialogue_text" instance=ExtResource("8_hyya5")]
+
+[node name="pause_btn" parent="ui" instance=ExtResource("14_bkedm")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 94.0
+offset_bottom = 94.0
+icon = ExtResource("11_odhra")
+
+[node name="toggle_orthogonal_btn" parent="ui" instance=ExtResource("14_bkedm")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 94.0
+grow_horizontal = 0
+icon = ExtResource("14_dl1p0")
+
+[node name="toggle_freecam_btn" parent="ui" instance=ExtResource("14_bkedm")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -188.0
+offset_top = 24.0
+offset_right = -118.0
+offset_bottom = 94.0
+grow_horizontal = 0
+icon = ExtResource("15_y16j1")
+
+[node name="call_hasibot_btn" parent="ui" instance=ExtResource("14_bkedm")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -282.0
+offset_top = 24.0
+offset_right = -212.0
+offset_bottom = 94.0
+grow_horizontal = 0
+icon = ExtResource("15_ixre3")
+
+[node name="interaction_progress_bar" type="ProgressBar" parent="ui"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -138.0
+offset_right = 374.0
+offset_bottom = -118.0
+grow_vertical = 0
+max_value = 2.0
+show_percentage = false
+
+[node name="interact_btn" type="Button" parent="ui"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -94.0
+offset_right = 374.0
+offset_bottom = -24.0
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 35
+text = "Interact (E)"
+
+[node name="main" type="Node3D" parent="."]
+
+[node name="camera_controller" type="CharacterBody3D" parent="main" node_paths=PackedStringArray("toggle_freecam_button", "toggle_orthogonal_button", "target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+motion_mode = 1
+script = ExtResource("16_ai63i")
+toggle_freecam_button = NodePath("../../ui/toggle_freecam_btn")
+freecam_enabled_icon = ExtResource("18_wd8y4")
+freecam_disabled_icon = ExtResource("15_y16j1")
+toggle_orthogonal_button = NodePath("../../ui/toggle_orthogonal_btn")
+orthogonal_icon = ExtResource("15_qgh8q")
+perspective_icon = ExtResource("14_dl1p0")
+can_rotate = true
+target = NodePath("../player")
+smoothness = 3.0
+speed = 3.0
+run_speed = 5.0
+
+[node name="collider" type="CollisionShape3D" parent="main/camera_controller"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 6)
+shape = SubResource("SphereShape3D_lct1i")
+
+[node name="camera" type="Camera3D" parent="main/camera_controller"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5.5, 6)
+environment = SubResource("Environment_4vwv4")
+current = true
+fov = 29.1
+size = 6.0
+
+[node name="player" parent="main" node_paths=PackedStringArray("camera_controller") instance=ExtResource("4_7g4ja")]
+camera_controller = NodePath("../camera_controller")
+
+[node name="hasibot" parent="main" node_paths=PackedStringArray("dialogue_controller") instance=ExtResource("5_b4hyb")]
+dialogue_controller = NodePath("../../ui/dialogue_controller")
+dialogues = Array[Resource("res://addons/dialogue_system/scripts/dialogue_data.gd")]([ExtResource("2_ihig7")])
+
+[node name="interaction_area" parent="main/hasibot" index="2" node_paths=PackedStringArray("interact_hold_timer", "player", "interact_btn", "interaction_progress_bar")]
+interact_hold_timer = NodePath("interact_hold_timer")
+player = NodePath("../../player")
+interact_btn = NodePath("../../../ui/interact_btn")
+interaction_progress_bar = NodePath("../../../ui/interaction_progress_bar")
+
+[node name="world" type="Node3D" parent="main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="nav_region" type="NavigationRegion3D" parent="main/world"]
+navigation_mesh = SubResource("NavigationMesh_g6wa1")
+
+[node name="ground" type="CSGBox3D" parent="main/world/nav_region"]
+material_override = SubResource("StandardMaterial3D_4xk3g")
+use_collision = true
+size = Vector3(30, 1, 30)
+
+[node name="ground2" type="CSGBox3D" parent="main/world/nav_region"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 14.5)
+material_override = SubResource("StandardMaterial3D_4xk3g")
+use_collision = true
+size = Vector3(30, 9, 1)
+
+[node name="light" type="DirectionalLight3D" parent="main/world"]
+transform = Transform3D(1, 0, 0, 0, -0.767467, 0.641088, 0, -0.641088, -0.767467, 0, 1.0631, 0)
+light_color = Color(1, 1, 0.815686, 1)
+light_energy = 1.5
+
+[node name="world_void" parent="main/world" node_paths=PackedStringArray("player") instance=ExtResource("23_rk2dx")]
+player = NodePath("../../player")
+
+[connection signal="pressed" from="ui/call_hasibot_btn" to="main/hasibot" method="_on_call_hasibot_btn_pressed"]
+
+[editable path="main/hasibot"]

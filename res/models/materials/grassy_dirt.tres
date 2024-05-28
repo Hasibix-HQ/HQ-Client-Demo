@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://koht01x8crfg"]
+
+[ext_resource type="Texture2D" uid="uid://1hel72cedgfu" path="res://res/textures/grassy_dirt.png" id="1_0ouph"]
+
+[resource]
+resource_name = "m_c78bdace-563b-0482-0673-f5d2a7a73f29"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_0ouph")
+metallic_specular = 0.0
+roughness = 0.0
+uv1_scale = Vector3(1.333, 1, 1.333)
+texture_filter = 2

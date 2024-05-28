@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://n0bk0ikow0xv"]
+
+[ext_resource type="Texture2D" uid="uid://c16itxtk0yn56" path="res://res/textures/grass.png" id="1_4nwbb"]
+
+[resource]
+resource_name = "m_c78bdace-563b-0482-0673-f5d2a7a73f29"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_4nwbb")
+texture_filter = 2
+disable_receive_shadows = true

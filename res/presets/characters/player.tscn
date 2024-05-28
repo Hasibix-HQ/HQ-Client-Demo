@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://bp4j438xbofau"]
+
+[ext_resource type="Script" path="res://res/scripts/player.gd" id="1_6jjmp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s7e8m"]
+radius = 0.375
+height = 1.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dektl"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 0, 0, 1)
+metallic = 0.5
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g0u3o"]
+material = SubResource("StandardMaterial3D_dektl")
+radius = 0.375
+height = 1.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytaaq"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0, 0.705882, 1, 1)
+metallic = 0.5
+metallic_specular = 0.0
+roughness = 0.0
+disable_receive_shadows = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o2j08"]
+material = SubResource("StandardMaterial3D_ytaaq")
+top_radius = 0.305
+bottom_radius = 0.305
+height = 0.285
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub1gv"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.596853, 1.62441e-06, 4.33177e-07, 1)
+metallic = 0.5
+metallic_specular = 0.0
+roughness = 0.0
+disable_receive_shadows = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_uirvo"]
+material = SubResource("StandardMaterial3D_ub1gv")
+size = Vector3(0.47, 0.675, 0.435)
+
+[node name="player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+rotation_order = 0
+script = ExtResource("1_6jjmp")
+
+[node name="collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_s7e8m")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+rotation_order = 0
+mesh = SubResource("CapsuleMesh_g0u3o")
+
+[node name="mesh2" type="MeshInstance3D" parent="mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.2)
+mesh = SubResource("CylinderMesh_o2j08")
+skeleton = NodePath("../..")
+
+[node name="mesh3" type="MeshInstance3D" parent="mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0.246366)
+mesh = SubResource("BoxMesh_uirvo")
+skeleton = NodePath("../..")

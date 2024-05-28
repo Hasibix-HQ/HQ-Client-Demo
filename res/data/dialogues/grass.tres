@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=7 format=3 uid="uid://6obloty460io"]
+
+[ext_resource type="Script" path="res://addons/dialogue_system/scripts/dialogue_response.gd" id="1_187r3"]
+[ext_resource type="Script" path="res://addons/dialogue_system/scripts/dialogue_data.gd" id="1_p5uw0"]
+
+[sub_resource type="Resource" id="Resource_r7gk4"]
+script = ExtResource("1_p5uw0")
+author = "System"
+text = "* You touched some grass. Nice."
+responses = Array[ExtResource("1_187r3")]([])
+typewriter_enabled = true
+typewriter_delay = 0.1
+typewriter_is_instant = false
+typewriter_voice_enabled = false
+voice_bytes = Array[AudioStream]([])
+
+[sub_resource type="Resource" id="Resource_frpag"]
+script = ExtResource("1_187r3")
+response_text = "Heck yeah!"
+result_dialogue = SubResource("Resource_r7gk4")
+
+[sub_resource type="Resource" id="Resource_4jmr2"]
+script = ExtResource("1_p5uw0")
+author = "System"
+text = "* You decide not to touch some grass."
+responses = Array[ExtResource("1_187r3")]([])
+typewriter_enabled = true
+typewriter_delay = 0.1
+typewriter_is_instant = false
+typewriter_voice_enabled = false
+voice_bytes = Array[AudioStream]([])
+
+[sub_resource type="Resource" id="Resource_2hccg"]
+script = ExtResource("1_187r3")
+response_text = "Nah"
+result_dialogue = SubResource("Resource_4jmr2")
+
+[resource]
+script = ExtResource("1_p5uw0")
+author = "System"
+text = "* Touch some grass?"
+responses = Array[ExtResource("1_187r3")]([SubResource("Resource_frpag"), SubResource("Resource_2hccg")])
+typewriter_enabled = true
+typewriter_delay = 0.1
+typewriter_is_instant = false
+typewriter_voice_enabled = false
+voice_bytes = Array[AudioStream]([])

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://l63qmsvwpkbj"]
+
+[ext_resource type="Script" path="res://res/scripts/npc.gd" id="1_5qydj"]
+[ext_resource type="PackedScene" uid="uid://cs5fkjestyutu" path="res://res/models/hasibot_simplified.tscn" id="2_d20wb"]
+[ext_resource type="Script" path="res://res/scripts/interactable_area.gd" id="3_osbo4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fl7d3"]
+size = Vector3(1, 1.5, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtym4"]
+size = Vector3(2, 1.5, 2)
+
+[node name="hasibot" type="CharacterBody3D"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, -3)
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_5qydj")
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 1.25, 0.05)
+shape = SubResource("BoxShape3D_fl7d3")
+
+[node name="mesh" parent="." instance=ExtResource("2_d20wb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="interaction_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("3_osbo4")
+
+[node name="collider" type="CollisionShape3D" parent="interaction_area"]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0.75, 0.05)
+shape = SubResource("BoxShape3D_vtym4")
+
+[node name="interact_hold_timer" type="Timer" parent="interaction_area"]
+wait_time = 2.0
+one_shot = true
+
+[node name="ai" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+debug_enabled = true
+
+[connection signal="body_entered" from="interaction_area" to="interaction_area" method="_on_body_entered"]
+[connection signal="body_exited" from="interaction_area" to="interaction_area" method="_on_body_exited"]
+[connection signal="path_changed" from="ai" to="." method="_on_path_changed"]
+[connection signal="target_reached" from="ai" to="." method="_on_target_reached"]

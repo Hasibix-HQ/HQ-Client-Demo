@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlw8ijmn1uhjh"]
+
+[ext_resource type="Texture2D" uid="uid://bq6lv6oo50d4u" path="res://res/textures/dialogue_box.png" id="1_hal3i"]
+[ext_resource type="Texture2D" uid="uid://dju2qdr0bgbex" path="res://res/textures/groundpng.png" id="1_k7u6f"]
+[ext_resource type="Texture2D" uid="uid://cepceynxjeysx" path="res://res/textures/hasibot_df_1.png" id="2_63ow6"]
+[ext_resource type="Script" path="res://res/scripts/dialogue.gd" id="2_xdv28"]
+[ext_resource type="Script" path="res://res/scripts/camera.gd" id="4_3t2q7"]
+[ext_resource type="PackedScene" uid="uid://bp4j438xbofau" path="res://res/presets/characters/player.tscn" id="4_7g4ja"]
+[ext_resource type="PackedScene" uid="uid://l63qmsvwpkbj" path="res://res/presets/characters/npcs/hasibot.tscn" id="5_b4hyb"]
+
+[sub_resource type="Environment" id="Environment_4vwv4"]
+background_mode = 1
+background_color = Color(1, 1, 0.607843, 1)
+background_energy_multiplier = 1.75
+ambient_light_energy = 1.91
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xk3g"]
+albedo_texture = ExtResource("1_k7u6f")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.933033
+texture_filter = 2
+
+[node name="test" type="Node3D"]
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ui"]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_hal3i")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+script = ExtResource("2_xdv28")
+dialogue_data = [null]
+
+[node name="TextureRect" type="TextureRect" parent="ui/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -44.0
+offset_right = 108.0
+offset_bottom = 44.0
+grow_vertical = 2
+texture = ExtResource("2_63ow6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ui/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.156
+anchor_right = 0.961
+anchor_bottom = 0.844
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 21
+text = "Hello there!"
+
+[node name="change_mode_btn" type="Button" parent="ui"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 324.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 35
+text = "Change mode"
+
+[node name="toggle_freecam_btn" type="Button" parent="ui"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 118.0
+offset_right = 324.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 35
+text = "Toggle Freecam"
+
+[node name="main" type="Node3D" parent="."]
+
+[node name="camera_holder" type="Node3D" parent="main" node_paths=PackedStringArray("toggle_freecam_button", "change_projection_button")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("4_3t2q7")
+toggle_freecam_button = NodePath("../../ui/toggle_freecam_btn")
+change_projection_button = NodePath("../../ui/change_mode_btn")
+
+[node name="camera" type="Camera3D" parent="main/camera_holder"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6.5, 6)
+environment = SubResource("Environment_4vwv4")
+current = true
+fov = 29.1
+size = 6.0
+
+[node name="player" parent="main" instance=ExtResource("4_7g4ja")]
+can_rotate_body = false
+
+[node name="hasibot" parent="main" instance=ExtResource("5_b4hyb")]
+
+[node name="world" type="Node3D" parent="main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="ground" type="CSGBox3D" parent="main/world"]
+material_override = SubResource("StandardMaterial3D_4xk3g")
+use_collision = true
+size = Vector3(30, 1, 30)
+
+[node name="light" type="DirectionalLight3D" parent="main/world"]
+transform = Transform3D(1, 0, 0, 0, -0.767467, 0.641088, 0, -0.641088, -0.767467, 0, 1.0631, 0)

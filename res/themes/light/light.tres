@@ -1,0 +1,93 @@
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://cdo88vq835nd2"]
+
+[ext_resource type="FontFile" uid="uid://b1wjtdyg4an11" path="res://res/fonts/slkscr.ttf" id="1_a68wi"]
+[ext_resource type="StyleBox" uid="uid://d2o7tskemld8k" path="res://res/themes/light/res/button_pressed.tres" id="1_fefwp"]
+[ext_resource type="StyleBox" uid="uid://e664vevb5ncb" path="res://res/themes/light/res/button_focused.tres" id="2_3h78d"]
+[ext_resource type="StyleBox" uid="uid://bljcs3f8isauh" path="res://res/themes/light/res/button_normal.tres" id="3_da47c"]
+[ext_resource type="Texture2D" uid="uid://bw2ro3dye2jjl" path="res://res/textures/ui/check_box_checked.png" id="4_71e40"]
+[ext_resource type="Texture2D" uid="uid://oc2gl8r84223" path="res://res/textures/ui/check_btn_checked.png" id="4_argwc"]
+[ext_resource type="Texture2D" uid="uid://cdv1cq460tg47" path="res://res/textures/ui/check_box_checked_disabled.png" id="5_jnwmk"]
+[ext_resource type="Texture2D" uid="uid://c38i2bdx1i226" path="res://res/textures/ui/check_btn_checked_disabled.png" id="5_vmhma"]
+[ext_resource type="Texture2D" uid="uid://cmeapr6drtpuy" path="res://res/textures/ui/check_btn_mirrored_checked_disabled.png" id="6_efmi0"]
+[ext_resource type="Texture2D" uid="uid://bqj3tuxjyk2pj" path="res://res/textures/ui/check_box_checked_radio.png" id="6_jwxjf"]
+[ext_resource type="Texture2D" uid="uid://h6cycgyr4d3v" path="res://res/textures/ui/check_btn_unchecked.png" id="7_o7r7d"]
+[ext_resource type="Texture2D" uid="uid://cc03lybss0qhe" path="res://res/textures/ui/check_box_checked_radio_disabled.png" id="7_uo5x2"]
+[ext_resource type="Texture2D" uid="uid://6ydv7ythb7r4" path="res://res/textures/ui/check_btn_mirrored_checked.png" id="7_vwlfa"]
+[ext_resource type="Texture2D" uid="uid://dn6kn2h0wtmjl" path="res://res/textures/ui/check_box_unchecked.png" id="8_48nxw"]
+[ext_resource type="Texture2D" uid="uid://cg3er04lcvikw" path="res://res/textures/ui/check_btn_unchecked_disabled.png" id="8_jeeh1"]
+[ext_resource type="Texture2D" uid="uid://b105r6d8m45lt" path="res://res/textures/ui/check_box_unchecked_disabled.png" id="9_v3sge"]
+[ext_resource type="Texture2D" uid="uid://ccc8d3jk7g1gn" path="res://res/textures/ui/check_btn_mirrored_unchecked_disabled.png" id="9_ykpif"]
+[ext_resource type="Texture2D" uid="uid://c2ut66dqk6v2y" path="res://res/textures/ui/check_btn_mirrored_unchecked.png" id="11_i6swc"]
+[ext_resource type="Texture2D" uid="uid://cwx1ddx31jl2h" path="res://res/textures/ui/option_btn_arrow.png" id="18_1aevx"]
+[ext_resource type="StyleBox" uid="uid://cdv6ykd3qshns" path="res://res/themes/light/res/progress_bar_bg.tres" id="19_6og63"]
+[ext_resource type="StyleBox" uid="uid://c7afa4je0scmj" path="res://res/themes/light/res/panel.tres" id="19_8jsri"]
+[ext_resource type="StyleBox" uid="uid://3mxtt60u2q2v" path="res://res/themes/light/res/progress_bar_fill.tres" id="20_was7m"]
+
+[resource]
+default_font = ExtResource("1_a68wi")
+default_font_size = 16
+Button/colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+Button/colors/font_disabled_color = Color(0.109804, 0.109804, 0.109804, 0.501961)
+Button/colors/font_focus_color = Color(0.109804, 0.109804, 0.109804, 1)
+Button/colors/font_hover_color = Color(0.109804, 0.109804, 0.109804, 1)
+Button/colors/font_hover_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+Button/colors/font_outline_color = Color(0.901961, 0.901961, 0.901961, 1)
+Button/colors/font_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 6
+Button/font_sizes/font_size = 16
+Button/styles/disabled = ExtResource("1_fefwp")
+Button/styles/focus = ExtResource("2_3h78d")
+Button/styles/hover = ExtResource("2_3h78d")
+Button/styles/normal = ExtResource("3_da47c")
+Button/styles/pressed = ExtResource("1_fefwp")
+CheckBox/colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckBox/colors/font_disabled_color = Color(0.109804, 0.109804, 0.109804, 0.501961)
+CheckBox/colors/font_focus_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckBox/colors/font_hover_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckBox/colors/font_hover_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckBox/colors/font_outline_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckBox/constants/h_separation = 12
+CheckBox/icons/checked = ExtResource("4_71e40")
+CheckBox/icons/checked_disabled = ExtResource("5_jnwmk")
+CheckBox/icons/radio_checked = ExtResource("6_jwxjf")
+CheckBox/icons/radio_checked_disabled = ExtResource("7_uo5x2")
+CheckBox/icons/radio_unchecked = ExtResource("8_48nxw")
+CheckBox/icons/radio_unchecked_disabled = ExtResource("9_v3sge")
+CheckBox/icons/unchecked = ExtResource("8_48nxw")
+CheckBox/icons/unchecked_disabled = ExtResource("9_v3sge")
+CheckButton/colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckButton/colors/font_disabled_color = Color(0.109804, 0.109804, 0.109804, 0.501961)
+CheckButton/colors/font_focus_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckButton/colors/font_hover_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckButton/colors/font_hover_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckButton/colors/font_outline_color = Color(0.901961, 0.901961, 0.901961, 1)
+CheckButton/colors/font_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+CheckButton/constants/h_separation = 10
+CheckButton/icons/checked = ExtResource("4_argwc")
+CheckButton/icons/checked_disabled = ExtResource("5_vmhma")
+CheckButton/icons/checked_disabled_mirrored = ExtResource("6_efmi0")
+CheckButton/icons/checked_mirrored = ExtResource("7_vwlfa")
+CheckButton/icons/unchecked = ExtResource("7_o7r7d")
+CheckButton/icons/unchecked_disabled = ExtResource("8_jeeh1")
+CheckButton/icons/unchecked_disabled_mirrored = ExtResource("9_ykpif")
+CheckButton/icons/unchecked_mirrored = ExtResource("11_i6swc")
+MenuButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+MenuButton/colors/font_disabled_color = Color(1, 1, 1, 0.3)
+MenuButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+MenuButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+MenuButton/colors/font_outline_color = Color(1, 1, 1, 1)
+MenuButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/constants/arrow_margin = 32
+OptionButton/constants/modulate_arrow = 1
+OptionButton/icons/arrow = ExtResource("18_1aevx")
+Panel/styles/panel = ExtResource("19_8jsri")
+ProgressBar/colors/font_color = Color(0.109804, 0.109804, 0.109804, 1)
+ProgressBar/styles/background = ExtResource("19_6og63")
+ProgressBar/styles/fill = ExtResource("20_was7m")

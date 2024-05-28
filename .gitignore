@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Others
+builds/*
+./builds/*
+builds/
+/builds/*
+./builds/*/*

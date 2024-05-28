@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://3mxtt60u2q2v"]
+
+[ext_resource type="Texture2D" uid="uid://dd8ihw7uh0vq3" path="res://res/textures/ui/progress_bar_fill.png" id="1_3w6r8"]
+
+[resource]
+texture = ExtResource("1_3w6r8")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
